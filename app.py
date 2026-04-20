@@ -4,12 +4,12 @@ import pandas as pd
 from pathlib import Path
 
 
-BASE_DIR = Path(__file__).parent
+
 
 @st.cache_resource
 def load_models():
-    classifier = joblib.load(BASE_DIR / 'RandomForest_Classifier_pipeline.pkl')
-    regressor = joblib.load(BASE_DIR / 'LinearRegression_pipeline.pkl')
+    classifier = joblib.load('RandomForest_Classifier_pipeline.pkl')
+    regressor = joblib.load('LinearRegression_pipeline.pkl')
     return classifier, regressor
 
 classifier_model, regressor_model = load_models()
